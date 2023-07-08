@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+
+/* <!-- Feel free to remove these styles or customise in your own stylesheet 👍
+  ### Primary
+
+- Tomato: hsl(4, 100%, 67%)
+
+### Neutral
+
+- Dark Slate Grey: hsl(234, 29%, 20%)
+- Charcoal Grey: hsl(235, 18%, 26%)
+- Grey: hsl(231, 7%, 60%)
+- White: hsl(0, 0%, 100%)
+  
+  
+  
+  --> */
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            padding: 0;
+             margin:0;
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-between; */
+            justify-content: center;
+            max-width: 450px;
+            height: 600px;    
+                 
+            /* padding: 10px 30px 0 30px; */
+            
+        }
+        p{
+      font-size: 16px;
+      margin-top: 0px;
+      line-height: 150%;
+      color: hsl(235, 18%, 26%);
+        font-weight: 400;
+        }
+        .heading{
+
+            font-size: 53px;
+            margin-bottom: 10px;
+            color: hsl(234, 29%, 20%);
+            font-weight: 700;
+        }
+        
+        .btn{
+
+            width: 100%;
+            height: 46px;
+            border-radius: 10px;
+            border-width: thin;
+            background-color: hsl(235, 18%, 26%) ;
+            color:hsl(0, 0%, 100%) ;
+            
+            
+            
+        }
+        .btn:hover{
+
+            background: linear-gradient(hsl(4, 100%, 67%), hsl(4, 100%, 67%));
+            cursor: pointer;
+        }
+
+        @media (max-width: 375px) {
+            .main{
+                position: relative;   
+                justify-content: normal;
+                gap: 20px;
+            }
+            form{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            }
+        }      
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="main">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs><linearGradient id="a" x1="100%" x2="0%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FF6A3A"/><stop offset="100%" stop-color="#FF527B"/></linearGradient></defs><g fill="none"><circle cx="32" cy="32" r="32" fill="url(#a)"/><path stroke="#FFF" stroke-width="4" d="m18.286 34.686 8.334 7.98 19.094-18.285"/></g></svg>
+        <h1 class="heading">Thanks for subscribing!</h1>
+        <p>A confirmation email has been sent to <span id="email"></span>. Please open it and click the button inside to confirm your subscription.</p>
+        <form action="index.html">
+
+            <input class="btn" type="submit" value="Dismiss message">
+
+        </form>
+        </div>
+    </div>
+    
+
+    <script>
+
+        document.getElementById("email").innerHTML = `<b>${localStorage.getItem("text")}</b>`
+
+    </script>
+</body>
+</html>
